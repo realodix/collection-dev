@@ -7,6 +7,7 @@
     "homepage": "https://github.com/realodix/collection",
     "require": {
         "php": "^7.4 || ^8.0",
+        "aimeos/map": "^3.7",
         "illuminate/collections": "^8.0 || ^9.0 || ^10.0 || ^11.0"
     },
     "require-dev": {
