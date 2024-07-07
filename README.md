@@ -15,8 +15,10 @@ composer require realodix/collection
 ### Access
 - all
 - toArray
+- values
 
 ### Filter
+- filter
 
 ### Sort
 

@@ -20,4 +20,14 @@ class CollectionTest extends TestCase
 
         $this->assertSame(['name' => 'Hello'], $c->toArray());
     }
+
+    public function testValues()
+    {
+        $c = new Collection([['id' => 1, 'name' => 'Hello'], ['id' => 2, 'name' => 'World']]);
+
+        $this->assertEquals(
+            [['id' => 2, 'name' => 'World']],
+            $c->filter(fn($item) => $item['id'] == 2)->values()->all()
+        );
+    }
 }

@@ -2,7 +2,9 @@
 
 namespace Realodix\Collection;
 
-class Collection
+use Illuminate\Support\Arr;
+
+final class Collection
 {
     /**
      * The items contained in the collection.
@@ -27,6 +29,15 @@ class Collection
         return $this->items;
     }
 
+    public function filter(?callable $callback = null)
+    {
+        if ($callback) {
+            return new self(Arr::where($this->items, $callback));
+        }
+
+        return new self(array_filter($this->items));
+    }
+
     /**
      * Returns the elements as a plain array.
      *
@@ -35,6 +46,14 @@ class Collection
     public function toArray(): array
     {
         return $this->items = $this->array($this->items);
+    }
+
+    /**
+     * Reset the keys on the underlying array.
+     */
+    public function values(): self
+    {
+        return new self(array_values($this->items));
     }
 
     /**
