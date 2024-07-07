@@ -29,7 +29,7 @@ final class Collection
         return $this->items;
     }
 
-    public function filter(?callable $callback = null)
+    public function filter(?callable $callback = null): self
     {
         if ($callback) {
             return new self(Arr::where($this->items, $callback));
