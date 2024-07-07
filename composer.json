@@ -1,0 +1,47 @@
+{
+    "name": "realodix/collection",
+    "description": "Easy and elegant handling of PHP arrays as array-like collection objects similar to jQuery and Laravel Collections.",
+    "license": "MIT",
+    "type": "library",
+    "authors": [{"name": "Budi Hermawan", "role": "Developer"}],
+    "homepage": "https://github.com/realodix/collection",
+    "require": {
+        "php": "^7.4 || ^8.0"
+    },
+    "require-dev": {
+        "phpstan/phpstan": "^1.11",
+        "phpunit/phpunit": "^9.6",
+        "realodix/relax": "^1.14"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "autoload": {
+        "psr-4": {
+            "Realodix\\Collection\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Realodix\\Collection\\Test\\": "tests"
+        }
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "sort-packages": true
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-main": "1.x-dev"
+        }
+    },
+    "scripts": {
+        "check": [
+            "@cs",
+            "@sa",
+            "@test"
+        ],
+        "cs": "./vendor/bin/php-cs-fixer fix -v",
+        "sa": "./vendor/bin/phpstan analyse",
+        "test": "./vendor/bin/phpunit"
+    }
+}
