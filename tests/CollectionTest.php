@@ -17,6 +17,7 @@ class CollectionTest extends TestCase
     public function testToArray()
     {
         $c = new Collection(['name' => 'Hello']);
+
         $this->assertSame(['name' => 'Hello'], $c->toArray());
     }
 }
