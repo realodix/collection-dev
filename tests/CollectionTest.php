@@ -27,7 +27,7 @@ class CollectionTest extends TestCase
 
         $this->assertEquals(
             [['id' => 2, 'name' => 'World']],
-            $c->filter(fn($item) => $item['id'] == 2)->values()->all()
+            $c->filter(fn($item) => $item['id'] == 2)->values()->all(),
         );
     }
 }
